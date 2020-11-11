@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <!--Bootsrap 4 CDN-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!--Fontawesome CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body class="body-login">
+  <div class="container-login">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card-login">
+        <div class="card-header">
+          <img id="img-login" src="img/login.png">
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="email" id="username" class="form-control" placeholder="Correo" required>
+
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+            </div>
+
+
+            <p>
+              <span class="p-white">Si no está registrado</span>
+              <a href="./register.html" data-toggle="modal" data-target="#modalregistro">registrate aquí</a>
+            </p>
+            
+            <div class="form-group">
+              <input type="button" value="Ingresar" onclick="validate()" class="btn float-right login_btn">
+            </div>
+          </form>
+        </div>
+        <div class="card-footer login-footer">
+          <p class="card-subtitle mb-2 text-muted text-center">© LOS MÁS MEJORES DE JAP - 2020<br> JÓVENES A PROGRAMAR
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

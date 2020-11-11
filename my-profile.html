@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header sticky-top py-1 bg-dark">
+    <input type="checkbox" id="check">
+    <label for="check"><img src="img/hamb.png" widht="30px" height="30px"></label>
+    <img id="header-img" src="img/header.png">
+    <nav class="bg-dark">
+      <div id="cont-nav" class="container d-flex flex-column flex-md-row justify-content-between">
+        <ul class="centrar">
+          <li class="py-2 d-md-inline-block img-header"><img src="img/header.png" style="height: 50px;"></li>
+          <li class="py-2 d-md-inline-block"><a  href="index.html">Inicio</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="categories.html">Categorías</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="products.html">Productos</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="sell.html">Vender</a></li>
+          
+          <div class="dropdown-divider"></div>
+          <li>
+            <img id="" class="imgNav imgRedonda imgPerfil" alt="Imagen Perfil">
+            <a class="dropdown-toggle py-2 d-md-inline-block" data-toggle="dropdown" href="#" role="button"
+              aria-haspopup="true" aria-expanded="false" id="user-a">
+              <script>
+                document.getElementById("user-a").innerHTML = localStorage.getItem("user");
+              </script>
+            </a>
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+              <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="container p-5">
+    <div>
+      <h3 class="text-center">Mi perfil</h3>
+    </div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Cambios guardados correctamente!</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="text-center">
+      <img alt="Imagen Perfil" class="imgRedonda imgPerfil">
+    </div>
+    <div class="form-row">
+      <input type="file" id="inputImg">
+    </div>
+    <div class="pt-4">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputFirstName">Primer nombre *</label>
+            <input type="text" class="form-control" id="inputFirstName" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputSecondName">Segundo nombre</label>
+            <input type="text" class="form-control" id="inputSecondName">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputFirstSurename">Primer apellido *</label>
+            <input type="text" class="form-control" id="inputFirstSurename" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputSecondSurename">Segundo apellido</label>
+            <input type="text" class="form-control" id="inputSecondSurename">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Email</label>
+          <input type="text" class="form-control" id="inputEmail" placeholder="" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputTel">Telefono</label>
+            <input type="text" class="form-control" id="inputTel" required>
+          </div>
+        </div>
+        <hr>
+        <div class="form-row text-center">
+          <div class="col">
+            <button  type="button" onclick="guardarDatos()" class="btn btn-primary" id="btn-guardar">Guardar datos</button>
+          </div>
+          <div class="col">
+            <button type="submit" onclick="borrarDatos()" class="btn btn-primary">Borrar todos los datos</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+  <script type="text/javascript" src="js/redireccion.js"></script>
+  <script type="text/javascript" src="js/img-profile.js"></script>
+  
+  
+</body>
+
+</html>

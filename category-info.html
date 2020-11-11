@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header sticky-top py-1 bg-dark">
+    <input type="checkbox" id="check">
+    <label for="check"><img src="img/hamb.png" widht="30px" height="30px"></label>
+    <img id="header-img" src="img/header.png">
+    <nav class="bg-dark">
+      <div id="cont-nav" class="container d-flex flex-column flex-md-row justify-content-between">
+        <ul class="centrar">
+          <li class="py-2 d-md-inline-block img-header"><img src="img/header.png" style="height: 50px;"></li>
+          <li class="py-2 d-md-inline-block"><a  href="index.html">Inicio</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="categories.html">Categorías</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="products.html">Productos</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="sell.html">Vender</a></li>
+          
+          <div class="dropdown-divider"></div>
+          <li>
+            <img id="" class="imgNav imgRedonda imgPerfil" alt="Imagen Perfil">
+            <a class="dropdown-toggle py-2 d-md-inline-block" data-toggle="dropdown" href="#" role="button"
+              aria-haspopup="true" aria-expanded="false" id="user-a">
+              <script>
+                document.getElementById("user-a").innerHTML = localStorage.getItem("user");
+              </script>
+            </a>
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+              <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción de la categoría</h2>
+        <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
+          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+      </div>
+      <h3 id="categoryName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="categoryDescription"></p>
+        </dd>
+
+        <dt>Cantidad de productos en la categoría</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+
+        <dt>Criterio para incluir productos en esta categoría</dt>
+        <dd>
+          <p id="productCriteria"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      </dl>
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/category-info.js"></script>
+  <script type="text/javascript" src="js/redireccion.js"></script>
+  <script type="text/javascript" src="js/img-profile.js"></script>
+</body>
+
+</html>

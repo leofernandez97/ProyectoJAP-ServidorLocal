@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header sticky-top py-1 bg-dark">
+    <input type="checkbox" id="check">
+    <label for="check"><img src="img/hamb.png" widht="30px" height="30px"></label>
+    <img id="header-img" src="img/header.png">
+    
+  </header>
+  <div class="container">
+    <div class="p-3">
+        <h3 class="text-center">Registro</h3>
+    </div>
+    <div class="pt-4">
+        <form>
+          <div class="bg-secondary text-white p-3 w-50 m-auto">
+            <div class="row justify-content-md-center">
+              <div class="col-md-8 col-sm-12 text-center">
+                <label for="inputEmail">Email</label>
+                <input type="text" class="form-control" id="inputEmail" placeholder="">
+              </div>
+            </div>
+            <div class="row pt-3 justify-content-md-center">
+              <div class="col-md-6 col-sm-12 text-center">
+                <label for="inputUser">Nombre de usuario</label>
+                <input type="text" class="form-control" id="inputUser">
+              </div>
+              <div class="col-md-6 col-sm-12 text-center">
+                <label for="inputPass">Contraseña</label>
+                <input type="password" class="form-control" id="inputPass">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFirstName">Primer nombre *</label>
+              <input type="text" class="form-control" id="inputFirstName">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputSecondName">Segundo nombre</label>
+              <input type="text" class="form-control" id="inputSecondName">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFirstSure">Primer apellido *</label>
+              <input type="text" class="form-control" id="inputFirstSurename">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputSecondSure">Segundo apellido</label>
+              <input type="text" class="form-control" id="inputSecondSurename">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputTel">Telefono</label>
+              <input type="text" class="form-control" id="inputTel">
+            </div>
+          </div>
+          <hr>
+          <button id="btn-registrarse" onclick="registrarse()" type="button" class="btn btn-primary">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/register.js"></script>
+</body>
+
+</html>

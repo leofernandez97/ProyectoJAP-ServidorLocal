@@ -1,0 +1,15 @@
+.imgCarousel{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+/*Img centradas*/
+
+.ctrlCarousel{
+    width: auto;
+    height: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10%;
+    margin-left: 10%;
+}

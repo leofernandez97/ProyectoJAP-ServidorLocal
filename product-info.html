@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css'>
+  <link rel="stylesheet" href="css/styleGallery.css">
+</head>
+
+<body>
+  <header class="site-header sticky-top py-1 bg-dark">
+    <input type="checkbox" id="check">
+    <label for="check"><img src="img/hamb.png" widht="30px" height="30px"></label>
+    <img id="header-img" src="img/header.png">
+    <nav class="bg-dark">
+      <div id="cont-nav" class="container d-flex flex-column flex-md-row justify-content-between">
+        <ul class="centrar">
+          <li class="py-2 d-md-inline-block img-header"><img src="img/header.png" style="height: 50px;"></li>
+          <li class="py-2 d-md-inline-block"><a  href="index.html">Inicio</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="categories.html">Categorías</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="products.html">Productos</a></li>
+          <li class="py-2 d-md-inline-block"><a  href="sell.html">Vender</a></li>
+          
+          <div class="dropdown-divider"></div>
+          <li>
+            <img id="" class="imgNav imgRedonda imgPerfil" alt="Imagen Perfil">
+            <a class="dropdown-toggle py-2 d-md-inline-block" data-toggle="dropdown" href="#" role="button"
+              aria-haspopup="true" aria-expanded="false" id="user-a">
+              <script>
+                document.getElementById("user-a").innerHTML = localStorage.getItem("user");
+              </script>
+            </a>
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+              <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="container p-5">
+    <h2 id="productName">
+      </h3>
+      <hr class="my-3">
+      <dl>
+        <dt class="subtitle" style="display: none;">Imágenes ilustrativas</dt>
+        <dd>
+          <div>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" id="productImagesGallery">
+               <!--ACA SE INSERTAN LAS IMG-->
+              
+              </div>
+              <!--BOTONES GALERIA-->
+              <a class="carousel-control-prev ctrlCarousel bg-dark" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next ctrlCarousel bg-dark" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </dd>
+
+        <dt class="subtitle">Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt class="subtitle">Precio</dt>
+        <dd>
+          <span>
+            <p id="productCurrency"></p>
+            <p id="productCost"></p>
+          </span>
+        </dd>
+
+        <dt class="subtitle">Cantidad de unidades vendidas</dt>
+        <dd>
+          <p id="productSoldCount"></p>
+        </dd>
+
+
+        <dt class="subtitle">Productos relacionados</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productRelatedProducts">
+          </div>
+        </dd>
+
+        <hr>
+
+        <dt class="subtitle">Comentarios</dt>
+        <dd>
+          <div id="comentarios-prod">
+
+          </div>
+          <div id="new-comentarios-prod">
+
+          </div>
+        </dd>
+
+        <dd>
+          <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">Haz un comentario...</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body mx-3">
+                  <div class="md-form mb-3 d-flex">
+                    <i class="fas fa-user align-ico"></i>
+                    <input type="text" id="userComment" class="form-control formComment" disabled="disabled">
+                    <script>
+                      document.getElementById("userComment").value = localStorage.getItem("user");
+                    </script>
+                  </div>
+                  <div class="md-form mb-3 d-flex">
+                    <i class="fas fa-calendar-alt align-ico"></i>
+                    <input type="text" id="dateComment" class="form-control formComment" disabled="disabled">
+                  </div>
+                  <div class="md-form mb-3 d-flex">
+                      <form id="ratingForm">
+                          <fieldset class="rating">
+                              <h5 class="text-left">Calificacion:</h5>
+                              <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Excelente">5 stars</label>
+                              <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Muy bueno">4 stars</label>
+                              <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Bueno">3 stars</label>
+                              <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Malo">2 stars</label>
+                              <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Muy malo">1 star</label>
+                          </fieldset>
+                      </form>
+                  </div>
+                  <div class="md-form mb-3 d-flex">
+                    <i class="fas fa-pencil align-ico"></i>
+                    <textarea type="text" id="textComment" class="md-textarea form-control formComment"
+                      rows="4"></textarea>
+                  </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button class="btn btn-success" type="button" data-dismiss="modal" aria-label="Close">Enviar<i
+                      class="fas fa-paper-plane-o ml-1"></i></button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="" class="btn btn-default btn-rounded mb-4 bg-light text-dark btn-lg" data-toggle="modal"
+              data-target="#modalContactForm">Haz un comentario...</a>
+          </div>
+        </dd>
+      </dl>
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+  </div>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+    </div>
+
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+  <!--COMENTARIOS-->
+  <script src="js/newComment.js"></script>
+  <script type="text/javascript" src="js/redireccion.js"></script>
+  <script type="text/javascript" src="js/img-profile.js"></script>
+
+</body>
+
+</html>
