@@ -1,12 +1,12 @@
-const CATEGORIES_URL = "http://localhost:8000/json/category/all.json";
-const PUBLISH_PRODUCT_URL = "http://localhost:8000/json/product/publish.json";
-const CATEGORY_INFO_URL = "http://localhost:8000/json/category/1234.json";
-const PRODUCTS_URL = "http://localhost:8000/json/product/all.json";
-const PRODUCT_INFO_URL = "http://localhost:8000/json/product/5678.json";
-const PRODUCT_INFO_COMMENTS_URL = "http://localhost:8000/json/product/5678-comments.json";
-const CART_INFO_URL = "http://localhost:8000/json/cart/987.json";
-const CART_BUY_URL = "http://localhost:8000/json/cart/buy.json";
-const CARTS_INFO_URL = "http://localhost:8000/json/cart/654.json";
+const CATEGORIES_URL = "/json/category/all.json";
+const PUBLISH_PRODUCT_URL = "/json/product/publish.json";
+const CATEGORY_INFO_URL = "/json/category/1234.json";
+const PRODUCTS_URL = "/json/product/all.json";
+const PRODUCT_INFO_URL = "/json/product/5678.json";
+const PRODUCT_INFO_COMMENTS_URL = "/json/product/5678-comments.json";
+const CART_INFO_URL = "/json/cart/987.json";
+const CART_BUY_URL = "/json/cart/buy.json";
+const CARTS_INFO_URL = "/json/cart/654.json";
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";

@@ -3,16 +3,17 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
   <title>eMercado - Todo lo que busques está aquí</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet">
 </head>
 
@@ -20,14 +21,7 @@
   <header class="site-header sticky-top py-1 bg-dark">
     <input type="checkbox" id="check">
     <label for="check"><img src="img/hamb.png" widht="30px" height="30px"></label>
-    <div id="buscador-nav" class="input-group">
-        <input type="text" class="form-control search" id="buscador-input-nav">
-        <span class="input-group-btn bg-white">
-          <button type="button" class="btn btn-search" id="boton-nav">
-            Buscar
-          </button>
-        </span>
-    </div>
+    <img id="header-img" src="img/header.png">
     <nav class="bg-dark">
       <div id="cont-nav" class="container d-flex flex-column flex-md-row justify-content-between">
         <ul class="centrar">
@@ -36,9 +30,8 @@
           <li class="py-2 d-md-inline-block"><a  href="categories.html">Categorías</a></li>
           <li class="py-2 d-md-inline-block"><a  href="products.html">Productos</a></li>
           <li class="py-2 d-md-inline-block"><a  href="sell.html">Vender</a></li>
-          
           <div class="dropdown-divider"></div>
-          <li>
+          <li class="d-flex">
             <img id="" class="imgNav imgRedonda imgPerfil" alt="Imagen Perfil">
             <a class="dropdown-toggle py-2 d-md-inline-block" data-toggle="dropdown" href="#" role="button"
               aria-haspopup="true" aria-expanded="false" id="user-a">
@@ -58,55 +51,32 @@
       </div>
     </nav>
   </header>
-
-  <div  class="site-header py-1 bg-dark collapse" id="collapse-search">
-    <div class="form-inline d-flex justify-content-center md-form form-sm active-cyan active-cyan-2">
-      <div id="buscador-main" class="input-group w-50">
-        <input type="text" class="form-control search" id="buscador-input">
-        <span class="input-group-btn bg-white">
-          <button type="button" class="btn btn-search" id="boton-main">
-            Buscar
-          </button>
-        </span>
-      </div>
-    </div>
-  </div>
-  <div id="boton-search" class="text-center">
-    <button class="btn" id="btn-desplegar" onclick="cambiarTextoBoton()" type="button" value="Buscar"
-      data-toggle="collapse" data-target="#collapse-search" aria-expanded="false" aria-controls="collapseExample">
-      Desplegar menú de búsqueda
-    </button>
-  </div>
-
-
-  <!-- Desde aca-->
-
   <main role="main" class="pb-5">
-    <div class="text-center p-4" id="titulo">
-      <h2>Productos</h2>
-      <p class="lead">Verás aquí todos los productos del sitio.</p>
+    <div class="text-center p-4">
+      <h2>Categorías</h2>
+      <p class="lead">Verás aquí todas las categorías del sitio.</p>
     </div>
     <div class="container">
       <div class="text-right" id="caja">
         <input type="checkbox" id="check-filter" class="checkbox">
         <label class="label-filtros" for="check-filter" id="menu-filtros">Filtros</label>
-        <div id="filtros" class="left-panel">
+
+
+        <div class="left-panel" id="filtros">
           <ul id="ul-filtros">
             <li id="li-filtros">
               <div class="" id="buttons-filter" value="visible">
                 <div class="col text-center mt-2">
                   <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                     <label class="btn btn-light active" id="sortAsc">
-                      <input type="radio" name="options" autocomplete="off" checked /><i
-                        class="fas fa-sort-amount-down">$</i>
+                      <input type="radio" name="options" autocomplete="off" checked />A-Z
                     </label>
                     <label class="btn btn-light" id="sortDesc">
-                      <input type="radio" name="options" autocomplete="off" /><i
-                        class="fas fa-sort-amount-up mr-1">$</i>
+                      <input type="radio" name="options" autocomplete="off" />Z-A
                     </label>
                     <label class="btn btn-light" id="sortByCount">
                       <input type="radio" name="options" autocomplete="off" /><i
-                        class="fas fa-sort-amount-up mr-1">Rel.</i>
+                        class="fas fa-sort-amount-down mr-1"></i>Cant.
                     </label>
                   </div>
                 </div>
@@ -117,7 +87,7 @@
                 <div class="container m-0 p-0 text-center">
                   <div class="row container p-0 m-0">
                     <div class="col-sm-2">
-                      <p class="font-weight-normal my-2">Precio</p>
+                      <p class="font-weight-normal my-2">Cant.</p>
                     </div>
                     <div class="col">
                       <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin" />
@@ -137,16 +107,29 @@
                     </div>
                   </div>
                 </div>
+              </div>
             </li>
           </ul>
         </div>
 
-      
-    </div>
-    <div class="row" id="prod-list-container">
 
-    </div>
+        <div class="row">
+          <div class="list-group" id="cat-list-container"></div>
+        </div>
+      </div>
   </main>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>
+        Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
+        letra del obligatorio.
+      </p>
+    </div>
+  </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -155,31 +138,12 @@
       <div></div>
     </div>
   </div>
-</body>
-<!-- Hasta aca agregue-->
-<footer class="text-muted bg-light">
-  <p class="float-right">
-    <a href="#">Volver arriba</a>
-  </p>
-  <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-  <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-  </div>
-</footer>
-<div id="spinner-wrapper">
-  <div class="lds-ring">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/init.js"></script>
-<script src="js/products.js"></script>
-<script type="text/javascript" src="js/redireccion.js"></script>
-<script type="text/javascript" src="js/img-profile.js"></script>
-
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/categories.js"></script>
+  <script type="text/javascript" src="js/redireccion.js"></script>
+  <script type="text/javascript" src="js/img-profile.js"></script>
 </body>
 
 </html>

@@ -33,7 +33,7 @@
           <li class="py-2 d-md-inline-block"><a  href="sell.html">Vender</a></li>
 
           <div class="dropdown-divider"></div>
-          <li>
+          <li class="d-flex">
             <img id="" class="imgNav imgRedonda imgPerfil" alt="Imagen Perfil">
             <a class="dropdown-toggle py-2 d-md-inline-block" data-toggle="dropdown" href="#" role="button"
               aria-haspopup="true" aria-expanded="false" id="user-a">
@@ -108,23 +108,23 @@
             <div class="w-75 ml-auto mr-auto" id="datos-compra">
               <div>
                 <h3>Dirección de envío</h3>
-                <form id="direccion">
+                <form id="direccion" method="POST" action="/js/comprar.js">
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="dir">Calle:</label>
-                      <input type="text" id="dir" class="form-control" name="direccion" size="40" required
+                      <input type="text" id="dir" class="form-control" name="dir-calle" size="40" required
                         placeholder="Calle">
                     </div>
                     <div class="form-group col-md-3">
                       <label for="num-puerta">Número de puerta:</label>
-                      <input type="text" id="num-puerta" class="form-control" name="direccion" size="25" required
+                      <input type="text" id="num-puerta" class="form-control" name="dir-puerta" size="25" required
                         placeholder="Núm. de puerta">
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-md-6">
                       <label for="dir-esquina">Esquina:</label>
-                      <input type="text" id="dir-esquina" class="form-control" name="direccion" size="40" required
+                      <input type="text" id="dir-esquina" class="form-control" name="dir-esquina" size="40" required
                         placeholder="Esquina">
                     </div>
                   </div>
@@ -156,17 +156,17 @@
                 <div class="tipo-envio pt-4">
                   <div>
                     <h3><img src="./img/envio-logo.png" style="width: 40px;"> Tipo de envío</h3>
-                    <form id="envio" class="mt-3 mb-3" onchange="costos()">
+                    <form id="envio" method="POST" action="/js/comprar.js"  class="mt-3 mb-3" onchange="costos()">
                       <div>
-                        <input type="radio" id="val-prem" name="envio" required value="15" checked>
+                        <input type="radio" id="val-prem" class="envio" name="envio" required value="15" checked>
                         <label for="val-prem"> Premium 2 a 5 días</label>
                       </div>
                       <div>
-                        <input type="radio" id="val-expr" name="envio" required value="7">
+                        <input type="radio" id="val-expr" class="envio" name="envio" required value="7">
                         <label for="val-expr"> Express 5 a 8 días</label>
                       </div>
                       <div>
-                        <input type="radio" id="val-stan" name="envio" required value="5">
+                        <input type="radio" id="val-stan" class="envio" name="envio" required value="5">
                         <label for="val-stan"> Standard 12 a 15 días</label>
                       </div>
                     </form>
@@ -196,20 +196,18 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        <form onchange="habilitarForm()">
+                        <form onchange="habilitarForm()" method="POST" action="comprar.js">
                           <div class="text-center">
                             <input id="tarjeta" type="radio" name="metodo-pago" value="Tarjeta de credito" required>
-                            <label for="tarjeta" value="Tarjeta de credito"><img src="./img/logos tarjetas.png"
-                                style="width: 35px; height: auto;"></label>
+                            <label for="tarjeta" value="Tarjeta de credito">
+                              <img src="./img/logos tarjetas.png" style="width: 35px; height: auto;"></label>
 
-                            <input id="giro-banco" class="ml-5" type="radio" name="metodo-pago" value="Giro bancario"
-                              required>
+                            <input id="giro-banco" class="ml-5" type="radio" name="metodo-pago" value="Giro bancario"required>
                             <label for="giro-banco" class="" value="Giro bancario"><img src="./img/santander.png"
-                                style="width: 55px; height: auto;"> <img src="./img/brou.png"
-                                style="width: 35px; height: auto;"></label>
+                                style="width: 55px; height: auto;"><img src="./img/brou.png" style="width: 35px; height: auto;"></label>
                           </div>
                           <div>
-                            <form id="tajetaCredito" >
+                            <form method="POST" action="/" id="tajetaCredito" >
                               <div class="form-row">
                                 <div class="form-group col-md-6">
                                   <label for="numTarjeta">Número de tarjeta:</label>
@@ -234,7 +232,7 @@
                           <hr>
 
                           <div>
-                            <form id="giroBanco">
+                            <form id="giroBanco" method="POST" action="comprar.js">
                               <div class="form-row">
                                 <div class="form-group col">
                                   <label for="num-cuenta">Número de la cuenta</label>
@@ -244,8 +242,8 @@
                               </div>
                             </form>
                           </div>
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn btn-primary" name="metodo-pago"
+                          <input type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          <input type="submit" class="btn btn-primary" name="metodo-pago"
                             onclick="seleccionPago()">Seleccionar método</button>
                         </form>
                       </div>
@@ -260,6 +258,7 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             <button type="button" class="btn btn-primary" onclick="validarCompra()">Realizar compra</button>
           </div>
+          
         </div>
       </div>
     </div>

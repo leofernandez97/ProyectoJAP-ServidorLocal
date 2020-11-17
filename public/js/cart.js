@@ -122,7 +122,7 @@ function costos(){
 
     //calculo envio
     let porcentaje;
-    costoEnvio = document.getElementsByName("envio")
+    costoEnvio = document.getElementsByClassName("envio")
     for (let i = 0; i < costoEnvio.length; i++) {
         if (costoEnvio[i].checked == true){
             porcentaje = costoEnvio[i].value;
@@ -194,7 +194,7 @@ function validarCompra(){
         if(metodoDePago.innerText == "No ha seleccionado un método"){
             return alert("Debe seleccionar una forma de pago.")
         }
-        window.location.replace("./index.html")
+        
         alert("¡Compra realizada con éxito!")
         return $('#modal-compra').modal('hide')
         
@@ -236,6 +236,7 @@ function mostrarDatosCompra(){
     ventanaDatos = document.getElementById("datos-compra");
     
 }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
